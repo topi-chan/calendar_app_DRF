@@ -29,7 +29,8 @@ class CalendarEvent(models.Model):
     meeting_agenda = models.TextField(max_length=2000, null=False)
     start_date = models.DateTimeField(null=False)
     end_date = models.DateTimeField(null=False)
-    participant_list = models.TextField(blank=True)
+    participant_list = models.ManyToManyField(User, related_name='partc_list',
+                                              blank=True)
     location = models.ForeignKey(ConferenceRoom, on_delete=models.SET_NULL,
                                  null=True)
 
