@@ -20,7 +20,6 @@ urlpatterns += [
     path(r'', include(router.urls)),
     path(r'api/', include('rest_framework.urls', namespace='rest_framework'))]
 
-#API VIEW
 urlpatterns += [
     path(r'date=<int:year>-<int:month>-<int:day>', EventDayView.as_view()),
     path(r'location_id=<str:loc>', LocationIdView.as_view()),
