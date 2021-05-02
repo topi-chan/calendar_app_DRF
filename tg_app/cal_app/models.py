@@ -5,12 +5,14 @@ from timezone_field import TimeZoneField
 
 
 class User(AbstractUser):
+    '''Company is simplyfied version of FK value.'''
 
     company = models.IntegerField(blank=True, default=0)
     timezone = TimeZoneField(default='Europe/London')
 
     def __str__(self):
         return self.email
+
 
 class ConferenceRoom(models.Model):
 
